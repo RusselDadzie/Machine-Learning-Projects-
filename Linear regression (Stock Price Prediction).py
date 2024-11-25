@@ -47,6 +47,7 @@ figure = go.Figure(data = [go.Candlestick(x=df["Date"],
                                           open=df["Open"],high=df["High"],
                                           low=df["Low"], close=df["Close"])])
 figure.update_layout(title = "Google Stock Price Analysis", xaxis_rangeslider_visible=False)
+figure.show()
 
 
 X = df[['Open','High','Low','Volume']] #splitting dataset for our input variables and output (independent variables and dependent)
@@ -118,6 +119,7 @@ graph = dfr.head(200)
 graph.plot(kind='bar') 
 plt.show()
 
+#create function to allow you to place random inputs for predicted close values
 def test_model_with_inputs(model, scaler=None):
     print("\nTest the model with new independent variables")
     # Prompt for user input or generate random values within reasonable ranges
